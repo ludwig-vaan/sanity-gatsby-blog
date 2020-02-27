@@ -1,3 +1,6 @@
+const path = require('path')
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin')
+
 const {isFuture} = require('date-fns')
 /**
  * Implement Gatsby's Node APIs in this file.
@@ -11,9 +14,7 @@ async function createBlogPostPages (graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityPost(
-        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-      ) {
+      allSanityPost {
         edges {
           node {
             id
@@ -48,4 +49,23 @@ async function createBlogPostPages (graphql, actions) {
 
 exports.createPages = async ({graphql, actions}) => {
   await createBlogPostPages(graphql, actions)
+}
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  getConfig,
+  rules,
+  loaders,
+  actions
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      plugins: [
+        new DirectoryNamedWebpackPlugin({
+          exclude: /node_modules/
+        })
+      ]
+    }
+  })
 }

@@ -1,4 +1,4 @@
-import {format, isFuture} from 'date-fns'
+import {format, isFuture, parseISO} from 'date-fns'
 
 export function cn (...args) {
   return args.filter(Boolean).join(' ')
@@ -18,7 +18,9 @@ export function filterOutDocsPublishedInTheFuture ({publishedAt}) {
 }
 
 export function getBlogUrl (publishedAt, slug) {
-  return `/blog/${format(publishedAt, 'YYYY/MM')}/${slug.current || slug}/`
+  const date = parseISO(publishedAt)
+  const dateSegment = format(date, 'yyyy/MM')
+  return `/blog/${dateSegment}/${slug.current || slug}/`
 }
 
 export function buildImageObj (source = {asset: {}}) {
