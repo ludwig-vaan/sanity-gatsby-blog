@@ -48,6 +48,14 @@ export default {
     {
       type: 'mainImage',
       options: {hotspot: true}
+    },
+    {
+      name: 'block code',
+      title: 'Block code',
+      type: 'code',
+      options: {
+        minRows: 20
+      }
     }
   ]
 }
