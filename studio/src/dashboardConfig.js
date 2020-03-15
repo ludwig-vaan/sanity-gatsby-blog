@@ -14,7 +14,7 @@ export default {
                 {
                   buildHookId: '5e4c50490b32761262263972',
                   title: 'Sanity Studio',
-                  name: 'sanity-gatsby-blog-studio-9civjts7',
+                  name: 'ludwig-blog-studio',
                   apiId: '130e694c-5841-4543-929f-606d08f597ee'
                 },
                 {
