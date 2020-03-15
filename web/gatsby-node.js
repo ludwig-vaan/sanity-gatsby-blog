@@ -14,7 +14,7 @@ async function createBlogPostPages (graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanityPost {
+      allSanityPost { 
         edges {
           node {
             id

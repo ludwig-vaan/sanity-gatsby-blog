@@ -1,6 +1,6 @@
 export default {
   widgets: [
-    { name: 'structure-menu' },
+    {name: 'structure-menu'},
     {
       name: 'project-info',
       options: {
@@ -18,10 +18,10 @@ export default {
                   apiId: '130e694c-5841-4543-929f-606d08f597ee'
                 },
                 {
-                  buildHookId: '5e4c5049da20682f19462519',
+                  buildHookId: '5e579d1cf6dc7e7bf94cf48f',
                   title: 'Blog Website',
-                  name: 'sanity-gatsby-blog-web-1rgpacf5',
-                  apiId: 'd53082bf-be26-4634-8707-582292b7974d'
+                  name: 'ludwig',
+                  apiId: '4c63fc33-496f-4f3a-8706-2ff1a61df601'
                 }
               ]
             }
@@ -30,18 +30,18 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/ludwig-vaan/sanity-gatsby-blog',
+            value: 'https://github.com/ludwig-vaan/ludwig-portofolio',
             category: 'Code'
           },
-          { title: 'Frontend', value: 'https://sanity-gatsby-blog-web-1rgpacf5.netlify.com', category: 'apps' }
+          {title: 'Frontend', value: 'ludwigvaan.com', category: 'apps'}
         ]
       }
     },
-    { name: 'project-users', layout: { height: 'auto' } },
+    {name: 'project-users', layout: {height: 'auto'}},
     {
       name: 'document-list',
-      options: { title: 'Recent blog posts', order: '_createdAt desc', types: ['post'] },
-      layout: { width: 'medium' }
+      options: {title: 'Recent blog posts', order: '_createdAt desc', types: ['post']},
+      layout: {width: 'medium'}
     }
   ]
 }
